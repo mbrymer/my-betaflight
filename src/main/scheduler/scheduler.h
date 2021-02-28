@@ -145,6 +145,10 @@ typedef enum {
     TASK_PINIOBOX,
 #endif
 
+#ifdef USE_BEEPER
+    TASK_BUZZER_SONG,
+#endif
+
     /* Count of real tasks */
     TASK_COUNT,
 

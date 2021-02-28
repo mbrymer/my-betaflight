@@ -166,6 +166,12 @@ static const uint8_t beep_rcSmoothingInitFail[] = {
     10, 10, 10, 10, 10, 10, 50, 25, BEEPER_COMMAND_STOP
 };
 
+// Buzzer song:
+// Hopefully that one George Michael song (buh buh na na na!)
+static const uint8_t beep_buzzersong[] = {
+    10, 10, 10, 10, 10, 40, 40, 10, 40, 10, 40, 40, 10, 10, 10, 10, 10, 70, BEEPER_COMMAND_STOP
+};
+
 // array used for variable # of beeps (reporting GPS sat count, etc)
 static uint8_t beep_multiBeeps[MAX_MULTI_BEEPS + 1];
 
@@ -224,7 +230,9 @@ static const beeperTableEntry_t beeperTable[] = {
     { BEEPER_ENTRY(BEEPER_CAM_CONNECTION_OPEN,   21, beep_camOpenBeep,     "CAM_CONNECTION_OPEN") },
     { BEEPER_ENTRY(BEEPER_CAM_CONNECTION_CLOSE,  22, beep_camCloseBeep,    "CAM_CONNECTION_CLOSE") },
     { BEEPER_ENTRY(BEEPER_RC_SMOOTHING_INIT_FAIL,23, beep_rcSmoothingInitFail, "RC_SMOOTHING_INIT_FAIL") },
-    { BEEPER_ENTRY(BEEPER_ALL,                   24, NULL,                 "ALL") },
+    { BEEPER_ENTRY(BEEPER_BUZZER_SONG,           24, beep_buzzersong,       "BUZZER_SONG")},
+    { BEEPER_ENTRY(BEEPER_SYSTEM_IDENTIFICATION, 25, beep_2longerBeeps,           "SYSTEM_IDENTIFICATION")},
+    { BEEPER_ENTRY(BEEPER_ALL,                   26, NULL,                 "ALL") },
 };
 
 static const beeperTableEntry_t *currentBeeperEntry = NULL;

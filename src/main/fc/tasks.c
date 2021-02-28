@@ -60,6 +60,7 @@
 
 #include "io/asyncfatfs/asyncfatfs.h"
 #include "io/beeper.h"
+#include "io/buzzersong.h"
 #include "io/dashboard.h"
 #include "io/gps.h"
 #include "io/ledstrip.h"
@@ -354,6 +355,10 @@ void tasksInit(void)
     setTaskEnabled(TASK_PINIOBOX, true);
 #endif
 
+#ifdef USE_BEEPER
+    setTaskEnabled(TASK_BUZZER_SONG, true);
+#endif
+
 #ifdef USE_CMS
 #ifdef USE_MSP_DISPLAYPORT
     setTaskEnabled(TASK_CMS, true);
@@ -492,6 +497,10 @@ task_t tasks[TASK_COUNT] = {
 
 #ifdef USE_RANGEFINDER
     [TASK_RANGEFINDER] = DEFINE_TASK("RANGEFINDER", NULL, NULL, taskUpdateRangefinder, TASK_PERIOD_HZ(10), TASK_PRIORITY_IDLE),
+#endif
+
+#ifdef USE_BEEPER
+    [TASK_BUZZER_SONG] = DEFINE_TASK("BUZZER_SONG", NULL, NULL, processBuzzerSong, TASK_PERIOD_HZ(100), TASK_PRIORITY_LOW),
 #endif
 };
 

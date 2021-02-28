@@ -57,6 +57,8 @@ typedef enum {
     BEEPER_CAM_CONNECTION_CLOSE,    // When the 5 key simulation stop
     BEEPER_RC_SMOOTHING_INIT_FAIL,  // Warning beep pattern when armed and rc smoothing has not initialized filters
     BEEPER_ARMING_GPS_NO_FIX,       // Beep a special tone when arming the board and GPS has no fix
+    BEEPER_BUZZER_SONG,             // Play that one George Michael song (buh buh na na na)
+    BEEPER_SYSTEM_IDENTIFICATION,   // Beep when system identification mode runs
     BEEPER_ALL,                     // Turn ON or OFF all beeper conditions
     // BEEPER_ALL must remain at the bottom of this enum
 } beeperMode_e;
