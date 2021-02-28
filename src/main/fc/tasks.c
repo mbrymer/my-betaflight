@@ -72,6 +72,9 @@
 #include "io/usb_cdc_hid.h"
 #include "io/vtx.h"
 
+// Added buzzer song
+#include "io/buzzersong.h"
+
 #include "msp/msp.h"
 #include "msp/msp_serial.h"
 
