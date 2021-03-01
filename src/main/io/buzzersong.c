@@ -26,7 +26,7 @@
 /*
  * Buzzer song periodic function called by scheduler
 */
-void processBuzzerSong(void)
+void processBuzzerSong(timeUs_t currentTimeUs)
 {
 
     if(IS_RC_MODE_ACTIVE(BOXBUZZERSONG) && !isBeeperOn){

@@ -18,4 +18,4 @@
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
-void processBuzzerSong(void);
+void processBuzzerSong(timeUs_t currentTimeUs);
